@@ -6,11 +6,11 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+            var NAMA = $("#NAMA").val();
+            var NIM = $("#NIM").val();
+            var NILAI = $("#NILAI").val();
+            var dataString = "NAMA=" + NAMA + "&NIM=" + NIM + "&NILAI=" + NILAI + "&insert=";
+            if ($.trim(NAMA).length > 0 & $.trim(NIM).length > 0 & $.trim(NILAI).length > 0) {
                 $.ajax({
                     type: "POST",
                     url: "http://localhost/Rohan/CURD/insert.php",
@@ -38,7 +38,7 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <h1 class="title">Insert Database</h1>
+        <h1 class="NAMA">Insert Database</h1>
         <a class="button button-clear" href="readjson.html">Read JSON</a>
     </div>
     <br/>
@@ -46,16 +46,16 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>NAMA</label>
+            <input type="text" id="NAMA" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>NIM</label>
+            <input type="text" id="NIM" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>NILAI</label>
+            <input type="text" id="NILAI" value="" />
         </div>
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
