@@ -7,19 +7,19 @@
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var title = decodeURI(getUrlVars()["title"]);
-        var duration = decodeURI(getUrlVars()["duration"]);
-        var price = decodeURI(getUrlVars()["price"]);
+        var NAMA = decodeURI(getUrlVars()["NAMA"]);
+        var NIM = decodeURI(getUrlVars()["NIM"]);
+        var NILAI = decodeURI(getUrlVars()["NILAI"]);
         $("#id").val(id);
-        $("#title").val(title);
-        $("#duration").val(duration);
-        $("#price").val(price);
+        $("#NAMA").val(NAMA);
+        $("#NIM").val(NIM);
+        $("#NILAI").val(NILAI);
         $("#update").click(function() {
             var id = $("#id").val();
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "&update=";
+            var NAMA = $("#NAMA").val();
+            var NIM = $("#NIM").val();
+            var NILAI = $("#NILAI").val();
+            var dataString = "id=" + id + "&NAMA=" + NAMA + "&NIM=" + NIM + "&NILAI=" + NILAI + "&update=";
             $.ajax({
                 type: "POST",
                 url: "https://kungfumas.000webhostapp.com/update.php",
@@ -70,7 +70,7 @@
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
         <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="title">Update Database</h1>
+        <h1 class="NAMA">Update Database</h1>
         <a class="button button-clear" href="readjson.html">Read JSON</a>
     </div>
     <br/>
@@ -78,16 +78,16 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>NAMA</label>
+            <input type="text" id="NAMA" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>NIM</label>
+            <input type="text" id="NIM" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>NILAI</label>
+            <input type="text" id="NILAI" value="" />
         </div>
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
