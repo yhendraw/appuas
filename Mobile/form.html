@@ -7,19 +7,19 @@
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var Nama = decodeURI(getUrlVars()["Nama"]);
+        var NAMA = decodeURI(getUrlVars()["NAMA"]);
         var NIM = decodeURI(getUrlVars()["NIM"]);
         var NILAI = decodeURI(getUrlVars()["NILAI"]);
         $("#id").val(id);
-        $("#Nama").val(Nama);
+        $("#NAMA").val(NAMA);
         $("#NIM").val(NIM);
         $("#NILAI").val(NILAI);
         $("#update").click(function() {
             var id = $("#id").val();
-            var Nama = $("#Nama").val();
+            var NAMA = $("#NAMA").val();
             var NIM = $("#NIM").val();
             var NILAI = $("#NILAI").val();
-            var dataString = "id=" + id + "&Nama=" + Nama + "&NIM=" + NIM + "&NILAI=" + NILAI + "&update=";
+            var dataString = "id=" + id + "&NAMA=" + NAMA + "&NIM=" + NIM + "&NILAI=" + NILAI + "&update=";
             $.ajax({
                 type: "POST",
                 url: "http://localhost/Rohan/CURD/update.php",
@@ -38,7 +38,6 @@
                     }
                 }
             });
-
         });
         $("#delete").click(function() {
             var id = $("#id").val();
@@ -61,7 +60,6 @@
                     }
                 }
             });
-
         });
     });
     </script>
@@ -70,7 +68,7 @@
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
         <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="Nama">Update Database</h1>
+        <h1 class="NAMA">Update Database</h1>
         <a class="button button-clear" href="readjson.html">Read JSON</a>
     </div>
     <br/>
@@ -78,8 +76,8 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Nama</label>
-            <input type="text" id="Nama" value="" />
+            <label>NAMA</label>
+            <input type="text" id="NAMA" value="" />
         </div>
         <div class="item">
             <label>NIM</label>
